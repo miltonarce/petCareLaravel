@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="field">
                                             <label>Fecha de nacimiento</label>
-                                            <input type="date" id="nacimiento" name="nacimiento" placeholder="Seleccione Fecha">
+                                            <input type="text" id="nacimiento" name="nacimiento" placeholder="Seleccione Fecha">
                                         </div>
                                     </div>
                                 </div>
@@ -54,6 +54,12 @@
                             </form>
                         </div>
                         <div class="column">
+                            @if(Session::has('message'))
+                                <div class="mensaje ui error message">
+                                    <div class="header">Error de login.</div>
+                                    <p>{{ Session::get('message') }}</p>
+                                </div>
+                            @endif
                             <form class="ui form" action="<?= url('/login'); ?>" method="post">
                                 @csrf
                                 <h4 class="ui dividing header">Ingresar a PetCare</h4>
@@ -65,12 +71,6 @@
                                     <label>Contraseña</label>
                                     <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
                                 </div>
-                                @if(Session::has('message'))
-                                    <div class="ui error message">
-                                        <div class="header">Error de login.</div>
-                                        <p>{{ Session::get('message') }}</p>
-                                    </div>
-                                @endif
                                 <button class="ui button" type="submit">Login</button>
                             </form>
                         </div>
