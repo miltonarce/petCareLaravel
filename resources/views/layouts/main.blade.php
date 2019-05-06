@@ -12,6 +12,7 @@
 
     <script src="{{ url('css/semantic-ui/jquery-3.1.min.js') }}"></script>
     <script src="{{ url('css/semantic-ui/semantic.min.js') }}"></script>
+    <script src="{{ url('js/main.js') }}"></script>
 
 </head>
 <body>
@@ -21,21 +22,18 @@
             <div class="logo">
                 <img src="{{url('imagenes/logo_min.png')}}">
             </div>
-            <a class="active item">
+            <a class="active item" href="{{url('home')}}">
                 Home
             </a>
-            <a class="item">
-                Messages
-            </a>
-            <a class="item">
-                Friends
+            <a class="item"  href="{{url('admin')}}">
+               Administrar
             </a>
             <div class="right menu">
                 <div class="item">
-                    <div class="ui icon input">
-                        <input type="text" placeholder="Search...">
-                        <i class="search link icon"></i>
-                    </div>
+                    <a class="ui image label">
+                        <img src="{{url('/imagenes/user.png')}}">
+                        {{ Auth::user()->email }}
+                    </a>
                 </div>
                 <a class="ui item" href="{{url('logout')}}">
                     Salir
@@ -46,7 +44,7 @@
 </header>
 <div class="ui equal width center aligned padded grid">
     <div class="row"></div>
-    <div class="row">
+    <div class="content-main row">
         <div class="padding-contents ui container">
             @yield('main')
         </div>
@@ -54,7 +52,7 @@
 </div>
 <footer class="footer-pet inverted ui bottom fixed menu">
 
-   <p style="margin: 30px auto;">PetCare &copy; 2019</p>
+   <p class="text-footer">PetCare &copy; 2019</p>
 
 </footer>
 </body>

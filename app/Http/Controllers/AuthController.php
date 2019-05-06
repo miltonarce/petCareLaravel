@@ -11,11 +11,8 @@ class AuthController extends  Controller
 {
     public function formLogin()
     {
-        if(Auth::check()){
-            return view('index');
-        }else{
+
             return view('login');
-        }
     }
 
     public function doLogin(Request $request)

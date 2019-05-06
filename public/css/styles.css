@@ -1,5 +1,5 @@
 .footer-pet{
-    height: 130px !important;
+    height: 60px !important;
     color: white;
 }
 .padding-contents{
@@ -11,4 +11,29 @@
 
 .mensaje{
     margin-top: 20px !important;
+}
+.content-main{
+    height: 750px;
+    overflow-y: scroll;
+}
+.succes{
+    color: #0e8c8c;
+}
+.error{
+    color: #ff5144;
+}
+.img-thumbnail{
+    width: 60px;
+    height: 60px;
+}
+.img{
+    width:290px;
+    height: 290px;
+}
+.content{
+    cursor: default !important;
+}
+.text-footer{
+    margin: 15px auto;
+    padding-top: 20px;
 }

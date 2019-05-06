@@ -22,31 +22,49 @@
                                     <div class="fields">
                                         <div class="field">
                                             <label>Email</label>
-                                            <input type="email" id="newEmail" name="newEmail" placeholder="Ingrese su Email">
+                                            <input type="email" id="email" name="email" placeholder="Ingrese su Email">
+                                            @if($errors->has('email'))
+                                                <div class="ui pointing red basic label">{{ $errors->first('email') }}</div>
+                                            @endif
                                         </div>
                                         <div class="field">
                                             <label>Password</label>
-                                            <input type="password" id="newPassword" name="newPassword" placeholder="Ingrese su Password">
+                                            <input type="password" id="password" name="password" placeholder="Ingrese su Password">
+                                            @if($errors->has('email'))
+                                                <div class="ui pointing red basic label">{{ $errors->first('password') }}</div>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="fields">
                                         <div class="field">
                                             <label>Nombre</label>
                                             <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre">
+                                            @if($errors->has('nombre'))
+                                                <div class="ui pointing red basic label">{{ $errors->first('nombre') }}</div>
+                                            @endif
                                         </div>
                                         <div class="field">
                                             <label>Apellido</label>
                                             <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido">
+                                            @if($errors->has('apellido'))
+                                                <div class="ui pointing red basic label">{{ $errors->first('apellido') }}</div>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="fields">
                                         <div class="field">
                                             <label>DNI</label>
                                             <input type="text" id="dni" name="dni" placeholder="Ingrese un Número">
+                                            @if($errors->has('dni'))
+                                                <div class="ui pointing red basic label">{{ $errors->first('dni') }}</div>
+                                            @endif
                                         </div>
                                         <div class="field">
                                             <label>Fecha de nacimiento</label>
                                             <input type="text" id="nacimiento" name="nacimiento" placeholder="Seleccione Fecha">
+                                            @if($errors->has('nacimiento'))
+                                                <div class="ui pointing red basic label">{{ $errors->first('nacimiento') }}</div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -66,10 +84,16 @@
                                 <div class="field">
                                     <label>Usuario</label>
                                     <input type="text" id="email" name="email" value="<?= old('email');?>" placeholder="Ingrese su usuario">
+                                    @if($errors->has('email'))
+                                        <div class="ui pointing red basic label">{{ $errors->first('email') }}</div>
+                                    @endif
                                 </div>
-                                <div class="field">
+                                <div class=" field">
                                     <label>Contraseña</label>
                                     <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+                                    @if($errors->has('password'))
+                                        <div class="ui pointing red basic label">{{ $errors->first('password') }}</div>
+                                    @endif
                                 </div>
                                 <button class="ui button" type="submit">Login</button>
                             </form>
