@@ -25,9 +25,14 @@
             <a class="active item" href="{{url('home')}}">
                 Home
             </a>
+            <a class="item"  href="{{url('about')}}">
+                Acerca de nosotros
+            </a>
+            @if(Auth::user()->permisos === 1)
             <a class="item"  href="{{url('admin')}}">
                Administrar
             </a>
+            @endif
             <div class="right menu">
                 <div class="item">
                     <a class="ui image label">
@@ -35,7 +40,7 @@
                         {{ Auth::user()->email }}
                     </a>
                 </div>
-                <a class="ui item" href="{{url('logout')}}">
+                <a class="salir-item ui item" href="{{url('logout')}}">
                     Salir
                 </a>
             </div>

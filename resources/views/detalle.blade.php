@@ -22,7 +22,7 @@
                         </div>
                         <div class="extra content">
                   <span class="right floated">
-                   Fecha Publicación: {{$mascota->created_at}}
+                   Fecha Publicación: <em>{{$mascota->created_at}}</em>
                   </span>
                             <span>
                     <i class="{{$mascota->vacunas ? 'succes' : 'error'}} syringe icon"></i>

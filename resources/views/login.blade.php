@@ -22,16 +22,16 @@
                                     <div class="fields">
                                         <div class="field">
                                             <label>Email</label>
-                                            <input type="email" id="email" name="email" placeholder="Ingrese su Email">
-                                            @if($errors->has('email'))
-                                                <div class="ui pointing red basic label">{{ $errors->first('email') }}</div>
+                                            <input type="email" id="newEmail" name="newEmail" placeholder="Ingrese su Email">
+                                            @if($errors->has('newEmail'))
+                                                <div class="ui pointing red basic label">{{ $errors->first('newEmail') }}</div>
                                             @endif
                                         </div>
                                         <div class="field">
                                             <label>Password</label>
-                                            <input type="password" id="password" name="password" placeholder="Ingrese su Password">
-                                            @if($errors->has('email'))
-                                                <div class="ui pointing red basic label">{{ $errors->first('password') }}</div>
+                                            <input type="password" id="newPassword" name="newPassword" placeholder="Ingrese su Password">
+                                            @if($errors->has('newPassword'))
+                                                <div class="ui pointing red basic label">{{ $errors->first('newPassword') }}</div>
                                             @endif
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="field">
                                             <label>Fecha de nacimiento</label>
-                                            <input type="text" id="nacimiento" name="nacimiento" placeholder="Seleccione Fecha">
+                                            <input  type="text"  placeholder="YYYY-MM-DD" required pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" id="nacimiento" name="nacimiento" >
                                             @if($errors->has('nacimiento'))
                                                 <div class="ui pointing red basic label">{{ $errors->first('nacimiento') }}</div>
                                             @endif

@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     public function mascotasListado()
     {
-        $mascotas = Mascota::with(['raza'])->get();
+        $mascotas = Mascota::with(['raza'])->get()->sortBy('created_at');
         return view('admin.listado_mascotas', compact('mascotas'));
     }
 
@@ -46,7 +46,8 @@ class AdminController extends Controller
 
         Mascota::create($dataMascota);
 
-        return redirect(url('/admin/mascotas/listado'));
+        return redirect(url('/admin/mascotas/listado'))
+            ->with('message', 'Mascota cargada correctamente.');
     }
 
     public function editarMascotaForm($id)
@@ -75,7 +76,8 @@ class AdminController extends Controller
 
         $mascota->update($dataMascota);
 
-        return redirect(url('/admin/mascotas/listado'));
+        return redirect(url('/admin/mascotas/listado'))
+            ->with('message', 'Mascota editada correctamente.');
     }
 
 

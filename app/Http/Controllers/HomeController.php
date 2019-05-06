@@ -12,7 +12,7 @@ class HomeController extends Controller
    public function index()
    {
 
-       $mascotas = Mascota::with(['raza', 'categoria'])->get();
+       $mascotas = Mascota::with(['raza', 'categoria'])->orderBy('created_at', 'desc')->get();
        return view('index', compact('mascotas'));
    }
 

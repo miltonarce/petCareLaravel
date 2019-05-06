@@ -17,11 +17,11 @@ class AuthController extends  Controller
 
     public function doLogin(Request $request)
     {
-        $request->validate(User::$loginRules);
+        $request->validate(User::$loginRules, User::$errorMessages);
 
         $userData = [
-            'email' => $request->get('email'),
-            'password' => $request->get('password'),
+            'email'    => $request->get('email'),
+            'password' => $request->get('password')
         ];
 
         if(!Auth::attempt($userData)){

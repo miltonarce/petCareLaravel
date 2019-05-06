@@ -13,8 +13,10 @@ class RegisterUserController extends Controller
         $request->validate(User::$rules, User::$errorMessages);
 
         $data = $request->all();
-        $data['password'] = Hash::make($request->input('password'));
 
+        $data['email'] = $request->input('newEmail');
+        $data['password'] = Hash::make($request->input('newPassword'));
+        
         User::create($data);
 
         return redirect(url('/'));

@@ -4,8 +4,8 @@
 
 @section('main')
     <h2 class="ui header">
-        <i class="paw icon"></i>
-        <div class="content">
+        <i class="paw icon home"></i>
+        <div class="content home">
           Listado de mascotas
             <div class="sub header">Aquí veras el listado de mascotas en situación de calle.</div>
         </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="extra content">
                   <span class="right floated">
-                     Fecha Publicación: {{$mascota->created_at}}
+                     Fecha Publicación: <em> {{$mascota->created_at}}</em>
                   </span>
                         <span>
                     <i class="{{$mascota->vacunas ? 'succes' : 'error'}} syringe icon"></i>

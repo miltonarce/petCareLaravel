@@ -8,7 +8,7 @@
             <div class="ui positive message">
                 <i class="close icon"></i>
                 <div class="header">
-                    Borrado exitoso.
+                    Proceso exitoso.
                 </div>
                 <p>{{Session::get('message') }}</p>
             </div>
@@ -16,8 +16,8 @@
         <div class="row">
             <div class="left floated eight wide column">
                 <h2 class="ui header">
-                    <i class="list alternate outline icon"></i>
-                    <div class="content">
+                    <i class="list alternate outline icon list-mascotas"></i>
+                    <div class="content list-mascotas">
                         Listado de mascotas
                         <div class="sub header">Aquí veras el listado de mascotas cargadas, puedes agregar, editar o borrar las que desees.</div>
                     </div>
@@ -64,7 +64,7 @@
             <td>{{$mascota->updated_at}}</td>
             <td>
                 <div class="ui buttons">
-                    <a class="ui button" href="{{ url('/admin/mascotas/'. $mascota->id_mascota .'/editar') }}">Editar</a>
+                    <a class="ui button" href="{{ url('/admin/mascotas/'.$mascota->id_mascota.'/editar') }}">Editar</a>
                     <div class="or"></div>
                     <button class="deleteMascota ui negative button active" delete-id="{{$mascota->id_mascota}}">Borrar</button>
                     <div class="ui basic modal" data-id="{{$mascota->id_mascota}}">

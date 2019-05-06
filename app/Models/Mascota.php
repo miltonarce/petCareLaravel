@@ -15,6 +15,7 @@ class Mascota extends Model
         'id_raza' => 'required|integer|exists:razas',
         'id_categoria' => 'required|integer|exists:categorias',
         'nombre' => 'required|min:3',
+        'imagen' => 'mimes:jpeg,jpg',
         "descripcion" => 'required'
     ];
 
@@ -27,6 +28,7 @@ class Mascota extends Model
         'id_categoria.exists' => 'La categoria seleccionada no existe.',
         'nombre.required' => 'Debe ingresar un nombre.',
         'nombre.min' => 'El nombre debe tener al menos :min caracteres',
+        'imagen.mimes' => 'Solo se aceptan los formatos jpg y jpeg.',
         'descripcion.required' => 'Debe escribir una descripcion de la mascota.',
     ];
 

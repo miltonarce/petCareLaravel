@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email', 'password',
+        'email', 'password', 'permisos',
     ];
 
     /**
@@ -39,4 +39,12 @@ class User extends Authenticatable
         'email' => 'required|email',
         'password' => 'required|min:6'
     ];
+
+    public static $errorMessages = [
+        'email.required' => 'Debe ingresar un email.',
+        'password.required' => 'Debe ingresar un password.',
+        'password.min' => 'El password debe tener al menos :min caracteres.',
+
+    ];
+
 }

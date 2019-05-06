@@ -37,3 +37,12 @@
     margin: 15px auto;
     padding-top: 20px;
 }
+.salir-item{
+    margin-right: 20px !important;
+}
+.home{
+    color: #2887ad;
+}
+.list-mascotas{
+    color: #f2711c;
+}
